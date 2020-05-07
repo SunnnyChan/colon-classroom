@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>多态类型——静中之动 | 冒号课堂</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/colon-classroom/assets/css/0.styles.66c7515b.css" as="style"><link rel="preload" href="/colon-classroom/assets/js/app.ec0b5e36.js" as="script"><link rel="preload" href="/colon-classroom/assets/js/2.8729a11c.js" as="script"><link rel="preload" href="/colon-classroom/assets/js/7.8f9f5f9a.js" as="script"><link rel="prefetch" href="/colon-classroom/assets/js/10.368bea65.js"><link rel="prefetch" href="/colon-classroom/assets/js/11.d2f0a483.js"><link rel="prefetch" href="/colon-classroom/assets/js/12.33727165.js"><link rel="prefetch" href="/colon-classroom/assets/js/13.c3807870.js"><link rel="prefetch" href="/colon-classroom/assets/js/14.4422a58e.js"><link rel="prefetch" href="/colon-classroom/assets/js/15.9a6e94e2.js"><link rel="prefetch" href="/colon-classroom/assets/js/16.355473a7.js"><link rel="prefetch" href="/colon-classroom/assets/js/17.ad77ae48.js"><link rel="prefetch" href="/colon-classroom/assets/js/18.e04ab935.js"><link rel="prefetch" href="/colon-classroom/assets/js/19.2628013f.js"><link rel="prefetch" href="/colon-classroom/assets/js/20.53a11e89.js"><link rel="prefetch" href="/colon-classroom/assets/js/21.f9792c66.js"><link rel="prefetch" href="/colon-classroom/assets/js/22.eccee837.js"><link rel="prefetch" href="/colon-classroom/assets/js/23.8c12f11d.js"><link rel="prefetch" href="/colon-classroom/assets/js/24.730c0eba.js"><link rel="prefetch" href="/colon-classroom/assets/js/25.1ea088d3.js"><link rel="prefetch" href="/colon-classroom/assets/js/26.a7f69969.js"><link rel="prefetch" href="/colon-classroom/assets/js/27.32626129.js"><link rel="prefetch" href="/colon-classroom/assets/js/28.93b30a44.js"><link rel="prefetch" href="/colon-classroom/assets/js/29.b0358f74.js"><link rel="prefetch" href="/colon-classroom/assets/js/3.29adc69c.js"><link rel="prefetch" href="/colon-classroom/assets/js/30.4f474b68.js"><link rel="prefetch" href="/colon-classroom/assets/js/31.9b1e9d94.js"><link rel="prefetch" href="/colon-classroom/assets/js/32.bad2713e.js"><link rel="prefetch" href="/colon-classroom/assets/js/33.ffc77d35.js"><link rel="prefetch" href="/colon-classroom/assets/js/34.b681b0f9.js"><link rel="prefetch" href="/colon-classroom/assets/js/35.995c72ed.js"><link rel="prefetch" href="/colon-classroom/assets/js/36.a7343326.js"><link rel="prefetch" href="/colon-classroom/assets/js/37.1499c16f.js"><link rel="prefetch" href="/colon-classroom/assets/js/38.c6f3c4b1.js"><link rel="prefetch" href="/colon-classroom/assets/js/39.13970ecf.js"><link rel="prefetch" href="/colon-classroom/assets/js/4.5f60d4ea.js"><link rel="prefetch" href="/colon-classroom/assets/js/40.31f6b10b.js"><link rel="prefetch" href="/colon-classroom/assets/js/41.8bd8d456.js"><link rel="prefetch" href="/colon-classroom/assets/js/42.ae600a4f.js"><link rel="prefetch" href="/colon-classroom/assets/js/43.9590bd29.js"><link rel="prefetch" href="/colon-classroom/assets/js/5.d7aeab17.js"><link rel="prefetch" href="/colon-classroom/assets/js/6.f3a0310a.js"><link rel="prefetch" href="/colon-classroom/assets/js/8.dbb58cf6.js"><link rel="prefetch" href="/colon-classroom/assets/js/9.0193b6be.js">
+    <link rel="stylesheet" href="/colon-classroom/assets/css/0.styles.66c7515b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/colon-classroom/" class="home-link router-link-active"><!----> <span class="site-name">冒号课堂</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="http://www.github.com/sunnnychan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="http://www.github.com/sunnnychan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/colon-classroom/chapter/" class="sidebar-link">章节</a></li><li><a href="/colon-classroom/notes/" class="sidebar-link">参考</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="多态类型-静中之动"><a href="#多态类型-静中之动" class="header-anchor">#</a> 多态类型——静中之动</h1> <h2 id="作用"><a href="#作用" class="header-anchor">#</a> 作用</h2> <div class="language-md extra-class"><pre class="language-md"><code>对于静态类型语言来说，继承是多态的基础，多态是继承的目的。
+静态类型语言中的多态是动静结合的产物，将静态类型的安全性和动态类型的灵活性融为一体。
+</code></pre></div><h2 id="实现"><a href="#实现" class="header-anchor">#</a> 实现</h2> <ul><li>一般有两种实现方式：</li></ul> <div class="language-md extra-class"><pre class="language-md"><code>一种利用GP（泛型编程）中的参数多态（Parametric Polymorphism）
+一种利用OOP中的包含多态（Inclusion Polymorphism）或称子类型多态（Subtyping Polymorphism）
+</code></pre></div><ul><li>从实现机制上看，不同之处在于何时将一个变量与其实际类型所定义的行为挂钩</li></ul> <div class="language-md extra-class"><pre class="language-md"><code>前者在编译期，属于早绑定（Early Binding）或静态绑定（Static Binding）；
+后者在运行期，属于迟绑定（late Binding）或动态绑定（dynamic Binding）。
+</code></pre></div><ul><li>从形式上看</li></ul> <div class="language-md extra-class"><pre class="language-md"><code>前者是发散式的，让相同的代码应用于不同的场合；
+后者是收敛式的，让不同的代码应用于相同的场合。
+</code></pre></div><ul><li>从思维方式上看</li></ul> <div class="language-md extra-class"><pre class="language-md"><code>前者是泛型编程风格，看重的是算法的普适性；
+后者是对象式编程风格，看重接口与实现的分离。
+</code></pre></div><div class="language-md extra-class"><pre class="language-md"><code>二者目的都一样：
+在保证必要的类型安全的前提下，突破编译期间过于严苛的类型限制。
+</code></pre></div><h2 id="示例"><a href="#示例" class="header-anchor">#</a> 示例</h2> <div class="language-md extra-class"><pre class="language-md"><code>对于既是静态类型语言又是静态语言、既支持OOP又支持GP的C++、Java和C#而言，
+多态机制是保证代码灵活性、可维护性和可重用性的终极武器。
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code>另外一种设计方案：
+<span class="token comment">// 键值对的存取接口</span>
+<span class="token keyword">interface</span> <span class="token class-name">KeyValueKeeper</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">,</span> <span class="token class-name">String</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">retrieve</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 加密接口</span>
+<span class="token keyword">interface</span> <span class="token class-name">Encrypter</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">encrypt</span><span class="token punctuation">(</span><span class="token class-name">String</span> plainText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Authenticator</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">KeyValueKeeper</span> keeper<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Encrypter</span> encrypter<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Authenticator</span><span class="token punctuation">(</span><span class="token class-name">KeyValueKeeper</span> keeper<span class="token punctuation">,</span> <span class="token class-name">Encrypter</span> encrypter<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>keeper <span class="token operator">=</span> keeper<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>encrypter <span class="token operator">=</span> encrypter<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token class-name">String</span> user<span class="token punctuation">,</span> <span class="token class-name">String</span> password<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>password <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+            password <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+        keeper<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> encrypter<span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">authenticate</span><span class="token punctuation">(</span><span class="token class-name">String</span> user<span class="token punctuation">,</span> <span class="token class-name">String</span> password<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name">String</span> storedPassword <span class="token operator">=</span> keeper<span class="token punctuation">.</span><span class="token function">retrieve</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>storedPassword <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>password <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+            password <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> storedPassword<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>encrypter<span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 如果仔细比较两种设计，就会发现它们很相似。后者只不过把前者对子类开放的接口合成为自己的两个成员。</span>
+<span class="token comment">// 再看接口的实现类——</span>
+<span class="token keyword">class</span> <span class="token class-name">MemoryKeeper</span> <span class="token keyword">implements</span> <span class="token class-name">KeyValueKeeper</span>
+<span class="token punctuation">{</span>
+     <span class="token keyword">private</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> keyValue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span> <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">,</span> <span class="token class-name">String</span> value<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        keyValue<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span> <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">retrieve</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> keyValue<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">PlainEncrypter</span> <span class="token keyword">implements</span> <span class="token class-name">Encrypter</span>
+<span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span> <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">encrypt</span><span class="token punctuation">(</span><span class="token class-name">String</span> plainText<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> plainText<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Sha1Encrypter</span> <span class="token keyword">implements</span> <span class="token class-name">Encrypter</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> ALGORITHM <span class="token operator">=</span> <span class="token string">&quot;SHA-1&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> CHARSET <span class="token operator">=</span> <span class="token string">&quot;UTF-8&quot;</span><span class="token punctuation">;</span> 
+
+    <span class="token annotation punctuation">@Override</span> <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">encrypt</span><span class="token punctuation">(</span><span class="token class-name">String</span> plainText<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">try</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name">MessageDigest</span> md <span class="token operator">=</span> <span class="token class-name">MessageDigest</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span>ALGORITHM<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            md<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>plainText<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span>CHARSET<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">byte</span> digest<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> md<span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">new</span> sun<span class="token punctuation">.</span>misc<span class="token punctuation">.</span><span class="token class-name">BASE64Encoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>digest<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span>
+        <span class="token keyword">catch</span> <span class="token punctuation">(</span>java<span class="token punctuation">.</span>security<span class="token punctuation">.</span><span class="token class-name">NoSuchAlgorithmException</span> e<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">InternalError</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">catch</span> <span class="token punctuation">(</span>java<span class="token punctuation">.</span>io<span class="token punctuation">.</span><span class="token class-name">UnsupportedEncodingException</span> e<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">InternalError</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//  MemoryKeeper与SimpleAuthenticator、Sha1Encrypter与Sha1Authenticator除了超类型和方法访问修饰符外，其他毫无二致。</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAuthenticator</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Authenticator</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MemoryKeeper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">PlainEncrypter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Authenticator</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MemoryKeeper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Sha1Encrypter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">Authenticator</span> authenticator<span class="token punctuation">)</span> <span class="token comment">// 隐含子类型多态</span>
+    <span class="token punctuation">{</span> <span class="token comment">/* 同上，略 */</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 测试代码区别也不大，只是Authenticator的多态性更加隐蔽</span>
+</code></pre></div><ul><li>设计对比：</li></ul> <div class="language-md extra-class"><pre class="language-md"><code><span class="token list punctuation">1.</span> 后者的实现是以小弊换大利，首先，后者用的是合成与接口继承，比前者的实现继承更值得推荐。
+
+<span class="token list punctuation">2.</span> 其次，假设共有M种数据存取方式，包括内存、文件、数据库等等；共有N种加密方式，
+  包括明文、SHA-1、SHA-256、MD5等等。按第一种设计，需要（M×N）个实现类；按第二种设计，只要（M+N）个实现类。
+		这还只是两种变化因素，假如需要考虑更多的因素，二者差距将更大。
+			比如增加编码方式：加密后的数据可以选择费空间省时间的十六进制编码、
+        费时间省空间的BASE64编码、省时间省空间却包含非打印字符的原始形式等；
+			比如增加安全强度：引入salt、nonce或IV等[3]；
+			比如增加密码状态：已生效密码、未生效密码、已过期密码等等。
+</code></pre></div><ul><li>两种设计的UML比较（P292）</li></ul> <div class="language-md extra-class"><pre class="language-md"><code>第一种设计中的九个Authenticator的子类只能作为验证类来重用，
+第二种设计中六个实现类不仅可以合作完成验证类的功能，还能分别单独提供键值存储和加密字符串的功能。
+
+这就是职责分离的好处。存储与加密本是两样不相干的工作，必要时可以合作，但平时最好分开管理，符合‘低耦合、高内聚’的原则。
+
+（GoF设计模式是OOP大树上结出的硕果，在你心中培养的OOP成熟之前，匆忙缔结的果实多半是青涩弱小的。）
+</code></pre></div><h2 id="策略模式（strategy-pattern或policy-pattern）的基本思想"><a href="#策略模式（strategy-pattern或policy-pattern）的基本思想" class="header-anchor">#</a> 策略模式（strategy pattern或policy pattern）的基本思想</h2> <div class="language-md extra-class"><pre class="language-md"><code>把一个模块所依赖的某类算法委交其他模块实现。比如Java中的Comparable和Comparator、C#中的IComparer就是比较算法的接口，
+
+当一个类的某个方法接收了此种类型的参数，实质上就采用了策略模式。
+	
+模板方法模式与策略模式非常神似，都是把一个类的可变部分移交给其他类处理。
+模板方法模式突出的是稳定坚固的骨架，策略模式突出的是灵活多变的手腕。
+不妨拿国家政策作比：
+	一个强调对内要稳，老一辈制订了大政方针，下一代必须在坚持原则的前提下进行完善；
+	一个强调对外要活，不能或不便自行开发的技术不妨从国外引进。
+
+正如模板方法模式可看作控制反转的特例，策略模式与依赖注射（Dependency Injection）也异曲同工。
+第二个Authenticator所依赖的两个功能KeyValueKeeper和Encrypter，就是是通过构造方法‘注射’进来的。
+（constructor injection，另外两种常用的注射方法是setter injection和interface injection。）
+策略只是一种特殊的依赖，是自内而外的——将算法抽出来外包；
+	依赖注射的机制更复杂、涵盖面更广，是自外而内的——从外部嵌入定制功能。
+	后者被广泛地用于框架应用之中，尤以Spring Framework和Google Guice为代表。
+</code></pre></div><ul><li>示例</li></ul> <div class="language-c++ extra-class"><pre class="language-text"><code>#include &lt;string&gt;
+#include &lt;map&gt;
+
+using namespace std;
+
+template &lt;typename KeyValueKeeper, typename Encrypter&gt;
+class Authenticator
+{
+    private:
+        KeyValueKeeper keeper;
+        Encrypter encrypter;
+    public:
+        void save(const string&amp; user, const string&amp; password)
+        {
+            keeper.store(user, encrypter.encrypt(password));
+        }
+
+        bool authenticate(const string&amp; user, const string&amp; password) const
+        {
+            string storedPassword;
+            if (!keeper.retrieve(user, storedPassword)) return false;
+
+            return storedPassword == encrypter.encrypt(password);
+        }
+};
+
+class MemoryKeeper
+{
+    private:
+        map&lt;string, string&gt; keyValue;
+    public:
+        void store(const string&amp; key, const string&amp; value)
+        {
+            keyValue[key] = value;  
+        }
+
+        bool retrieve(const string&amp; key, string&amp; value) const
+        {
+            map&lt;string, string&gt;::const_iterator itr = keyValue.find(key);
+            if (itr == keyValue.end()) return false;
+
+            value = itr-&gt;second;  
+            return true;
+        }
+};
+
+class PlainEncrypter
+{
+    public:
+        string encrypt(const string&amp; plainText) const { return plainText; }
+};
+
+class Sha1Encrypter
+{
+    public:
+        string encrypt(const string&amp; plainText) const { /* 省略代码  */ }
+};
+
+namespace
+{
+    template &lt;typename K, typename E&gt;
+    void test(Authenticator&lt;K, E&gt; authenticator) // 参数多态
+    { /* 省略代码  */ }
+}
+
+int main()
+{ 
+    test(Authenticator&lt;MemoryKeeper, PlainEncrypter&gt;());
+    test(Authenticator&lt;MemoryKeeper, Sha1Encrypter&gt;());
+    return 0;
+}
+
+以上代码与Java版的策略模式代码很相似，主要的区别是把KeyValueKeeper和Encrypter两个接口换成了模板参数。
+由于模板是在编译期间实例化的，因此没有动态绑定的运行开销，但缺点是不能动态改变策略。
+</code></pre></div><div class="language-md extra-class"><pre class="language-md"><code>通过一个验证类的三种解法，分别展示了三种形式的多态：
+	基于类继承的多态、基于接口继承的多态和基于模板的多态。
+	C中的函数指针比Java中的接口更加灵活高效，当然对程序员的要求也更高。
+</code></pre></div><ul><li>重载不也是一种多态吗？</li></ul> <div class="language-md extra-class"><pre class="language-md"><code>刚才所说的多态都属于通用多态（universal polymorphism）。
+
+此外，还有一类特别多态（ad-hoc polymorphism），常见有两种形式。
+一种是强制多态（coercion polymorphism），
+	即一种类型的变量在作为参数传递时隐式转换成另一种类型，
+	比如一个整型变量可以匹配浮点型变量的函数参数。
+
+另一种就是重载多态（overloading polymorphism），
+	它允许不同的函数或方法拥有相同的名字。
+	特别多态浅显易懂，其重要性与通用多态也不可同日而语，故不在我们关注之列。
+
+只是要注意一点，正如子类型应遵守超类型的规范，同名的函数或方法也应遵守相同的规范。
+如果为贪图取名方便而滥用重载，早晚因小失大。
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/colon-classroom/assets/js/app.ec0b5e36.js" defer></script><script src="/colon-classroom/assets/js/2.8729a11c.js" defer></script><script src="/colon-classroom/assets/js/7.8f9f5f9a.js" defer></script>
+  </body>
+</html>

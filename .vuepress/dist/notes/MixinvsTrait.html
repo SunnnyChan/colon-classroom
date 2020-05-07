@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mixin和Trait | 冒号课堂</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/colon-classroom/assets/css/0.styles.66c7515b.css" as="style"><link rel="preload" href="/colon-classroom/assets/js/app.ec0b5e36.js" as="script"><link rel="preload" href="/colon-classroom/assets/js/2.8729a11c.js" as="script"><link rel="preload" href="/colon-classroom/assets/js/38.c6f3c4b1.js" as="script"><link rel="prefetch" href="/colon-classroom/assets/js/10.368bea65.js"><link rel="prefetch" href="/colon-classroom/assets/js/11.d2f0a483.js"><link rel="prefetch" href="/colon-classroom/assets/js/12.33727165.js"><link rel="prefetch" href="/colon-classroom/assets/js/13.c3807870.js"><link rel="prefetch" href="/colon-classroom/assets/js/14.4422a58e.js"><link rel="prefetch" href="/colon-classroom/assets/js/15.9a6e94e2.js"><link rel="prefetch" href="/colon-classroom/assets/js/16.355473a7.js"><link rel="prefetch" href="/colon-classroom/assets/js/17.ad77ae48.js"><link rel="prefetch" href="/colon-classroom/assets/js/18.e04ab935.js"><link rel="prefetch" href="/colon-classroom/assets/js/19.2628013f.js"><link rel="prefetch" href="/colon-classroom/assets/js/20.53a11e89.js"><link rel="prefetch" href="/colon-classroom/assets/js/21.f9792c66.js"><link rel="prefetch" href="/colon-classroom/assets/js/22.eccee837.js"><link rel="prefetch" href="/colon-classroom/assets/js/23.8c12f11d.js"><link rel="prefetch" href="/colon-classroom/assets/js/24.730c0eba.js"><link rel="prefetch" href="/colon-classroom/assets/js/25.1ea088d3.js"><link rel="prefetch" href="/colon-classroom/assets/js/26.a7f69969.js"><link rel="prefetch" href="/colon-classroom/assets/js/27.32626129.js"><link rel="prefetch" href="/colon-classroom/assets/js/28.93b30a44.js"><link rel="prefetch" href="/colon-classroom/assets/js/29.b0358f74.js"><link rel="prefetch" href="/colon-classroom/assets/js/3.29adc69c.js"><link rel="prefetch" href="/colon-classroom/assets/js/30.4f474b68.js"><link rel="prefetch" href="/colon-classroom/assets/js/31.9b1e9d94.js"><link rel="prefetch" href="/colon-classroom/assets/js/32.bad2713e.js"><link rel="prefetch" href="/colon-classroom/assets/js/33.ffc77d35.js"><link rel="prefetch" href="/colon-classroom/assets/js/34.b681b0f9.js"><link rel="prefetch" href="/colon-classroom/assets/js/35.995c72ed.js"><link rel="prefetch" href="/colon-classroom/assets/js/36.a7343326.js"><link rel="prefetch" href="/colon-classroom/assets/js/37.1499c16f.js"><link rel="prefetch" href="/colon-classroom/assets/js/39.13970ecf.js"><link rel="prefetch" href="/colon-classroom/assets/js/4.5f60d4ea.js"><link rel="prefetch" href="/colon-classroom/assets/js/40.31f6b10b.js"><link rel="prefetch" href="/colon-classroom/assets/js/41.8bd8d456.js"><link rel="prefetch" href="/colon-classroom/assets/js/42.ae600a4f.js"><link rel="prefetch" href="/colon-classroom/assets/js/43.9590bd29.js"><link rel="prefetch" href="/colon-classroom/assets/js/5.d7aeab17.js"><link rel="prefetch" href="/colon-classroom/assets/js/6.f3a0310a.js"><link rel="prefetch" href="/colon-classroom/assets/js/7.8f9f5f9a.js"><link rel="prefetch" href="/colon-classroom/assets/js/8.dbb58cf6.js"><link rel="prefetch" href="/colon-classroom/assets/js/9.0193b6be.js">
+    <link rel="stylesheet" href="/colon-classroom/assets/css/0.styles.66c7515b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/colon-classroom/" class="home-link router-link-active"><!----> <span class="site-name">冒号课堂</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="http://www.github.com/sunnnychan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="http://www.github.com/sunnnychan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/colon-classroom/chapter/" class="sidebar-link">章节</a></li><li><a href="/colon-classroom/notes/" class="sidebar-link">参考</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mixin和trait"><a href="#mixin和trait" class="header-anchor">#</a> Mixin和Trait</h1> <p>本人认为这两个的涵义根据语言不同，而解释有所不同。<br>
+但是它们的目的都是作为单继承不足的一种补充，或者是变相地实现多继承。<br>
+实际上Java的接口也是变相的实现多继承，但是java的接口只是定义signature，没有实现体。</p> <p>在某种意义上Mixin和Trait这两者有点类似于抽象类，或者是有部分或全部实现体的Interface，<br>
+但是在具体语言中，有表现出不一样的用法。总体上，笔者认为没有特别固定的或者是严格的区别。<br>
+Mixin和Trait这两者都不能生成实例，否则就跟class没什么区别了。</p> <h2 id="scala-trait"><a href="#scala-trait" class="header-anchor">#</a> Scala trait</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">;</span> <span class="token comment">//实验用的空类  </span>
+  
+trait <span class="token class-name">TTeacher</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>    
+    def teach <span class="token comment">//虚方法，没有实现     </span>
+<span class="token punctuation">}</span>    
+trait <span class="token class-name">TPianoPlayer</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>    
+    def playPiano <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;I’m playing piano. &quot;</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token comment">//实方法，已实现    </span>
+<span class="token punctuation">}</span>    
+<span class="token keyword">class</span> <span class="token class-name">PianoplayingTeacher</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token keyword">with</span> <span class="token class-name">TTeacher</span> <span class="token keyword">with</span> <span class="token class-name">TPianoPlayer</span> <span class="token punctuation">{</span>    
+    def teach <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;I’m teaching students. &quot;</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token comment">//定义虚方法的实现    </span>
+<span class="token punctuation">}</span> 
+</code></pre></div><h2 id="php-traits"><a href="#php-traits" class="header-anchor">#</a> PHP traits</h2> <div class="language-php extra-class"><pre class="language-php"><code><span class="token comment">// the template  </span>
+<span class="token keyword">trait</span> TSingleton <span class="token punctuation">{</span>  
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token variable">$_instance</span> <span class="token operator">=</span> <span class="token constant">null</span><span class="token punctuation">;</span>  
+   
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">null</span> <span class="token operator">===</span> self<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token variable">$_instance</span><span class="token punctuation">)</span>  
+    <span class="token punctuation">{</span>  
+      self<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token variable">$_instance</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">self</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>   
+    <span class="token keyword">return</span> self<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token variable">$_instance</span><span class="token punctuation">;</span>  
+  <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>  
+<span class="token keyword">class</span> <span class="token class-name">FrontController</span> <span class="token punctuation">{</span>  
+  <span class="token keyword">use</span> <span class="token package">TSingleton</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+<span class="token comment">// can also be used in already extended classes  </span>
+<span class="token keyword">class</span> <span class="token class-name">WebSite</span> <span class="token keyword">extends</span> <span class="token class-name">SomeClass</span> <span class="token punctuation">{</span>  
+  <span class="token keyword">use</span> <span class="token package">TSingleton</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+</code></pre></div><h2 id="ruby-mixin"><a href="#ruby-mixin" class="header-anchor">#</a> Ruby mixin</h2> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">module</span> <span class="token constant">Foo</span>  
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">bar</span></span>  
+    puts <span class="token string">&quot;foo&quot;</span><span class="token punctuation">;</span>  
+  <span class="token keyword">end</span>  
+<span class="token keyword">end</span>  
+
+然后我们把这个模块混入到对象中去： 
+<span class="token keyword">class</span> <span class="token class-name">Demo</span>  
+  <span class="token keyword">include</span> <span class="token constant">Foo</span>  
+<span class="token keyword">end</span>
+
+如上编码后，模块中的实例方法就会被混入到对象中： 
+d<span class="token operator">=</span><span class="token constant">Demo</span><span class="token punctuation">.</span><span class="token keyword">new</span>  
+d<span class="token punctuation">.</span>bar
+</code></pre></div><p>从上面看来，从使用上来说，可能看不出什么区别，但是如果说非要说区别的话，笔者通过搜索摘录和归纳了一些区别：<br>
+1）Mixin可能更多的是指动态语言，它是在执行到某个点的时候，将代码插入到其中来达到代码复用的效果。<br>
+Trait更多的是编译过程中，通过一些静态手段赋值代码到类中使得其拥有Trait中的一些功能以达到代码复用的目的；
+2）“Mixins may contain state, (traditional) traits don't.”<br>
+这个区别比较弱，事实上Scala中Trait已经可以保存状态了（成员变量）；
+3）“Mixins use &quot;implicit conflict resolution&quot;, traits use &quot;explicit conflict resolution&quot;”。<br>
+这个区别可能是个明显的区别；但是如果某个语言它可以让Trait implicit resolve，那也没什么大不了。<br>
+4）“Mixins depends on linearization, traits are flattened.”这个区别可能有。<br>
+至少Scala里面貌似Trait是Flattened处理的，跟Java嵌套类差不多。</p> <h2 id="类还是trait？"><a href="#类还是trait？" class="header-anchor">#</a> 类还是Trait？</h2> <p>当我们考虑是否一个“概念”应该成为一个Trait 或者一个类的时候，记住作为混入的Trait 对于“附属”行为来说最有意义。<br>
+如果你发现某一个Trait 经常作为其它类的父类来用，导致子类会有像父Trait 那样的行为，<br>
+那么考虑把它定义为一个类吧，让这段逻辑关系更加清晰。</p> <h2 id="yii框架的组件行为管理机制和mix-in"><a href="#yii框架的组件行为管理机制和mix-in" class="header-anchor">#</a> Yii框架的组件行为管理机制和Mix-in</h2> <p>在Yii框架的官网，我们可以看到关于Behaviors &amp; events的介绍:<br>
+Behaviors are simply a way of adding methods to an object.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">SomeClass</span> <span class="token keyword">extends</span> <span class="token class-name">CBehavior</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> function <span class="token function">add</span><span class="token punctuation">(</span>$x<span class="token punctuation">,</span> $y<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> $x <span class="token operator">+</span> $y<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TestComponent</span> <span class="token keyword">extends</span> <span class="token class-name">CComponent</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+$test_comp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TestComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$test_comp<span class="token operator">-&gt;</span><span class="token function">attachbehavior</span><span class="token punctuation">(</span><span class="token string">'blah'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">SomeClass</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$test_comp<span class="token operator">-&gt;</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>在TestComponent类的对象创建的后，我们可以通过调用attachbehavior给对象添加新的方法。</p> <p>通过其源码（在base/CComponent.php）可以知道它是通过在组件类内部以私有变量的方式存储这些添加的方法所在的对象，<br>
+通过魔术方法__call，当调用一个未定义的方法时需要调用__call方法的特性，<br>
+遍历所有通过attachbehavior方法添加进来的对象，<br>
+并判断此对象是否禁用并且此对象是否存在需要调用的方法，如果存在则调用。</p> <p>此种实现方式存在如下一些问题：<br>
+如果多个对象存在相同的方法，则程序调用时永远会调用第一次添加进去的方法<br>
+如果我们只是需要某个对象中的某个方法，但是在存储上需要将整个对象添加到列表中</p> <p>也许你会觉得这些都是一些如果，都是一些假设，可能不会出现，这有些像众所周知的goto语句问题，<br>
+如果用得好，这是一个利器，如果用得不好，可能会给你带来痛苦。<br>
+Yii框架中的这种机制实现运行时的方法绑定，虽然类的属性和实例参数仍然归属于其它类和对象。</p> <p>在PHP中，接口是可以多继承的，但是接口只是形态上的多继承，是一种对于类实现的约束，是一种规格。<br>
+如果要实现这种类的重用，Ruby受Lisp的影响引入了Mix-in，在PHP5.4引入了trait关键字。</p> <p>在Ruby中Mix-in的关键字是module，而在即将推出的PHP5.4，其对应的关键字是trait；<br>
+如果要复用这个定义的类，在Ruby中使用include，而在PHP5.4中使用use。</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token constant">Ruby</span>：
+<span class="token keyword">module</span> <span class="token constant">SomeClass</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">add</span></span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> x <span class="token operator">+</span> y
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TestComponet</span>
+    <span class="token keyword">include</span> <span class="token constant">SomeClass</span>
+<span class="token keyword">end</span>
+
+test <span class="token operator">=</span> <span class="token constant">TestComponet</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+puts test<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
+</code></pre></div><p>PHP：</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?PHP</span>
+<span class="token keyword">trait</span> SomeClass <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token variable">$x</span><span class="token punctuation">,</span> <span class="token variable">$y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token variable">$x</span> <span class="token operator">+</span> <span class="token variable">$y</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TestComponent</span> <span class="token punctuation">{</span>
+    <span class="token keyword">use</span> <span class="token package">SomeClass</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token variable">$obj</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TestComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token variable">$obj</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre></div><p>现在排名靠前的面向对象的编程语言中，Java、C#等都是以单继承+接口来实现面向对象，<br>
+但是这在一定程序了稀释了继承的力量， 因为在业内推荐以组合的方式使用类。</p> <p>这在一些常见的设计模式中有明显的体现，想想在GOF的23个设计模式中有多少个是使用了继承的呢？<br>
+大多数是以接口+组合的方式实现。</p> <p>其实作为一个类来说，它也比较难做，即要能代码复用，又得被实例化，偏向谁呢？<br>
+这个时候Mixin可能就有一些用武之地了。</p> <p>Mixin最早起源于一个Lisp，Mixin鼓励代码重用，Mixin可以实现运行时的方法绑定，虽然类的属性和实例参数仍然是在编译时定义。<br>
+在面向对象编程语言，Mixin是一个提供了一些被用于继承或在子类中重用的功能的类，它类似于一种多继承，<br>
+但是实际上它是一种中小粒度的代码复用单元，而不直接用于实例化。<br>
+虽然这不是一种专业的方式进行功能复用，这在实现多继承的同时，在一定程序上避免了多继承的明显问题。</p> <p>PHP和Java类似，也是单继承+接口。 我们知道，一个类可以实现任意数量的接口，这对一个类需要实现多个抽象的时候非常有用。<br>
+然而，对于要实现了多个接口的类，每个类都需要实现这些接口，而大多数情况下，这些接口都是可以共用的。<br>
+PHP并没有提供内置机制来定义和使用这些可重用代码，虽然我们可以对一地些接口使用一个抽象类来共用代码，<br>
+但是如果这些类必须继承另一个抽象类呢？<br>
+就算是可以通过抽象类的多次继承实现代码的共用，但是整个继承体系将会变得非常复杂，<br>
+如果不能实现重用，那么可能我们只得CTRL + C 和 CTRL + V了。 大多数的情况下我们其实只是需要重用一些代码而已。</p> <p>虽然PHP在之前没有提供完善的解决方案，但在新发布PHP5.4中，出现了一个关键字trait。<br>
+通过这个关键字我们可以定义抽象为一个Trait，如下示例：</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">trait</span> HelloWorld <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token single-quoted-string string">'Hello World!'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TheWorldIsNotEnough</span> <span class="token punctuation">{</span>
+    <span class="token keyword">use</span> <span class="token package">HelloWorld</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token single-quoted-string string">'Hello Universe!'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token variable">$o</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TheWorldIsNotEnough</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$o</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// echos Hello Universe!</span>
+</code></pre></div><h2 id="trait的实现"><a href="#trait的实现" class="header-anchor">#</a> trait的实现</h2> <div class="language- extra-class"><pre class="language-text"><code>因为trait是一个语言结构，所以我们从zend_language_scanner.l文件中找到trait对应的关键字标识为：T_TRAIT 在zend_lang_parse.y文件中根据标识找到：
+
+class_entry_type:
+        T_CLASS         { $$.u.op.opline_num = CG(zend_lineno); $$.EA = 0; }
+    |   T_ABSTRACT T_CLASS { $$.u.op.opline_num = CG(zend_lineno); $$.EA = ZEND_ACC_EXPLICIT_ABSTRACT_CLASS; }
+    |   T_TRAIT { $$.u.op.opline_num = CG(zend_lineno); $$.EA = ZEND_ACC_TRAIT; }
+    |   T_FINAL T_CLASS { $$.u.op.opline_num = CG(zend_lineno); $$.EA = ZEND_ACC_FINAL_CLASS; }
+;
+</code></pre></div><p>T_TRAIT作为一个关键字和class并级，它作为一个另一种类型的类存在。<br>
+它将与接口、类处于同一字段标识。 其定义在zend_complie.h文件，如下：</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token macro property">#<span class="token directive keyword">define</span> ZEND_ACC_IMPLICIT_ABSTRACT_CLASS    0x10</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ZEND_ACC_EXPLICIT_ABSTRACT_CLASS    0x20</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ZEND_ACC_FINAL_CLASS                0x40</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ZEND_ACC_INTERFACE                  0x80</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ZEND_ACC_TRAIT                      0x120</span>
+</code></pre></div><p>以上的标识只是对应类的ce_flags结构，除此之外，在为的结构方面也有调整，如下：</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token keyword">struct</span> <span class="token class-name">_zend_class_entry</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token comment">//   省略，木有修改</span>
+    zend_class_entry <span class="token operator">*</span><span class="token operator">*</span>interfaces<span class="token punctuation">;</span>  <span class="token comment">//  接口列表</span>
+    zend_uint num_interfaces<span class="token punctuation">;</span>   <span class="token comment">//  接口数</span>
+
+    zend_class_entry <span class="token operator">*</span><span class="token operator">*</span>traits<span class="token punctuation">;</span>  <span class="token comment">//  traits列表</span>
+    zend_uint num_traits<span class="token punctuation">;</span>   <span class="token comment">//      traits数</span>
+    zend_trait_alias <span class="token operator">*</span><span class="token operator">*</span>trait_aliases<span class="token punctuation">;</span>   <span class="token comment">//  别名</span>
+    zend_trait_precedence <span class="token operator">*</span><span class="token operator">*</span>trait_precedences<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>从上面的结构可以看出，PHP为traits增加了对应的字段存储。
+从PHP的介绍中我们可知，trait可以动态绑定，则其执行应该是中间代码执行期间。<br>
+因此，如果使用了trait关键字，将会有对应的中间代码：ZEND_BIND_TRAITS 生成。<br>
+ZEND_BIND_TRAITS关键字最终调用zend_complie.c文件中的zend_do_bind_traits函数完成traits类的绑定，如下代码：</p> <div class="language-c extra-class"><pre class="language-c"><code>ZEND_API <span class="token keyword">void</span> <span class="token function">zend_do_bind_traits</span><span class="token punctuation">(</span>zend_class_entry <span class="token operator">*</span>ce TSRMLS_DC<span class="token punctuation">)</span> <span class="token comment">/* {{{ */</span>
+<span class="token punctuation">{</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ce<span class="token operator">-&gt;</span>num_traits <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/* complete initialization of trait strutures in ce */</span>
+    <span class="token function">zend_traits_init_trait_structures</span><span class="token punctuation">(</span>ce TSRMLS_CC<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/* first care about all methods to be flattened into the class */</span>
+    <span class="token function">zend_do_traits_method_binding</span><span class="token punctuation">(</span>ce TSRMLS_CC<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/* then flatten the properties into it, to, mostly to notfiy developer about problems */</span>
+    <span class="token function">zend_do_traits_property_binding</span><span class="token punctuation">(</span>ce TSRMLS_CC<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/* verify that all abstract methods from traits have been implemented */</span>
+    <span class="token function">zend_verify_abstract_class</span><span class="token punctuation">(</span>ce TSRMLS_CC<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/* now everything should be fine and an added ZEND_ACC_IMPLICIT_ABSTRACT_CLASS should be removed */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ce<span class="token operator">-&gt;</span>ce_flags <span class="token operator">&amp;</span> ZEND_ACC_IMPLICIT_ABSTRACT_CLASS<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ce<span class="token operator">-&gt;</span>ce_flags <span class="token operator">-=</span> ZEND_ACC_IMPLICIT_ABSTRACT_CLASS<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* }}} */</span>
+</code></pre></div><p>以上的绑定过程并不是和接口或类一样的的简单的合并操作，在合并操作之前需要处理引用和别名等情况，<br>
+此时类结构中的trait_aliases和trait_precedences就发挥作用了。
+trait定义的结构最终也是一个类。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/colon-classroom/assets/js/app.ec0b5e36.js" defer></script><script src="/colon-classroom/assets/js/2.8729a11c.js" defer></script><script src="/colon-classroom/assets/js/38.c6f3c4b1.js" defer></script>
+  </body>
+</html>

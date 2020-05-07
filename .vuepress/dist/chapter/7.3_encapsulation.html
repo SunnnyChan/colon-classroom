@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>封装隐藏——包装的讲究 | 冒号课堂</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/colon-classroom/assets/css/0.styles.66c7515b.css" as="style"><link rel="preload" href="/colon-classroom/assets/js/app.ec0b5e36.js" as="script"><link rel="preload" href="/colon-classroom/assets/js/2.8729a11c.js" as="script"><link rel="preload" href="/colon-classroom/assets/js/30.4f474b68.js" as="script"><link rel="prefetch" href="/colon-classroom/assets/js/10.368bea65.js"><link rel="prefetch" href="/colon-classroom/assets/js/11.d2f0a483.js"><link rel="prefetch" href="/colon-classroom/assets/js/12.33727165.js"><link rel="prefetch" href="/colon-classroom/assets/js/13.c3807870.js"><link rel="prefetch" href="/colon-classroom/assets/js/14.4422a58e.js"><link rel="prefetch" href="/colon-classroom/assets/js/15.9a6e94e2.js"><link rel="prefetch" href="/colon-classroom/assets/js/16.355473a7.js"><link rel="prefetch" href="/colon-classroom/assets/js/17.ad77ae48.js"><link rel="prefetch" href="/colon-classroom/assets/js/18.e04ab935.js"><link rel="prefetch" href="/colon-classroom/assets/js/19.2628013f.js"><link rel="prefetch" href="/colon-classroom/assets/js/20.53a11e89.js"><link rel="prefetch" href="/colon-classroom/assets/js/21.f9792c66.js"><link rel="prefetch" href="/colon-classroom/assets/js/22.eccee837.js"><link rel="prefetch" href="/colon-classroom/assets/js/23.8c12f11d.js"><link rel="prefetch" href="/colon-classroom/assets/js/24.730c0eba.js"><link rel="prefetch" href="/colon-classroom/assets/js/25.1ea088d3.js"><link rel="prefetch" href="/colon-classroom/assets/js/26.a7f69969.js"><link rel="prefetch" href="/colon-classroom/assets/js/27.32626129.js"><link rel="prefetch" href="/colon-classroom/assets/js/28.93b30a44.js"><link rel="prefetch" href="/colon-classroom/assets/js/29.b0358f74.js"><link rel="prefetch" href="/colon-classroom/assets/js/3.29adc69c.js"><link rel="prefetch" href="/colon-classroom/assets/js/31.9b1e9d94.js"><link rel="prefetch" href="/colon-classroom/assets/js/32.bad2713e.js"><link rel="prefetch" href="/colon-classroom/assets/js/33.ffc77d35.js"><link rel="prefetch" href="/colon-classroom/assets/js/34.b681b0f9.js"><link rel="prefetch" href="/colon-classroom/assets/js/35.995c72ed.js"><link rel="prefetch" href="/colon-classroom/assets/js/36.a7343326.js"><link rel="prefetch" href="/colon-classroom/assets/js/37.1499c16f.js"><link rel="prefetch" href="/colon-classroom/assets/js/38.c6f3c4b1.js"><link rel="prefetch" href="/colon-classroom/assets/js/39.13970ecf.js"><link rel="prefetch" href="/colon-classroom/assets/js/4.5f60d4ea.js"><link rel="prefetch" href="/colon-classroom/assets/js/40.31f6b10b.js"><link rel="prefetch" href="/colon-classroom/assets/js/41.8bd8d456.js"><link rel="prefetch" href="/colon-classroom/assets/js/42.ae600a4f.js"><link rel="prefetch" href="/colon-classroom/assets/js/43.9590bd29.js"><link rel="prefetch" href="/colon-classroom/assets/js/5.d7aeab17.js"><link rel="prefetch" href="/colon-classroom/assets/js/6.f3a0310a.js"><link rel="prefetch" href="/colon-classroom/assets/js/7.8f9f5f9a.js"><link rel="prefetch" href="/colon-classroom/assets/js/8.dbb58cf6.js"><link rel="prefetch" href="/colon-classroom/assets/js/9.0193b6be.js">
+    <link rel="stylesheet" href="/colon-classroom/assets/css/0.styles.66c7515b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/colon-classroom/" class="home-link router-link-active"><!----> <span class="site-name">冒号课堂</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="http://www.github.com/sunnnychan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="http://www.github.com/sunnnychan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/colon-classroom/chapter/" class="sidebar-link">章节</a></li><li><a href="/colon-classroom/notes/" class="sidebar-link">参考</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="封装隐藏-包装的讲究"><a href="#封装隐藏-包装的讲究" class="header-anchor">#</a> 封装隐藏——包装的讲究</h1> <h2 id="封装"><a href="#封装" class="header-anchor">#</a> 封装</h2> <ul><li>概念</li></ul> <div class="language-md extra-class"><pre class="language-md"><code>所谓封装性（encapsulation， [ɪn,kæpsə'leɪʃən]），
+就是将数据与相关行为包装在一起以实现信息隐藏（Information hiding）。
+
+狭义的封装是在打包的基础上加上访问控制，以实现信息隐藏。
+
+相对于广义的封装，不妨认为多了一个将白盒子刷成黑盒子的过程。
+这个过程可以看做对抽象机制的一种语法上的补充和强化：
+抽象意味着用户可以从高层的接口来看待或使用一类对象，而不用关系底层的实现，
+而黑盒封装意味着用户不需要也无权访问底层的实现。
+</code></pre></div><ul><li>优势</li></ul> <div class="language-md extra-class"><pre class="language-md"><code>分属不同类的函数是不可能产生歧义（ambiguity， [æmbɪ'gjuːɪtɪ]）的，
+哪怕是他们的签名一模一样。因此我们要把功劳记在封装的名下
+</code></pre></div><h2 id="访问控制"><a href="#访问控制" class="header-anchor">#</a> 访问控制</h2> <div class="language-md extra-class"><pre class="language-md"><code>访问控制不仅是一种语法限制，也是一种语义规范——标有public的是接口，标有private的是实现，泾渭分明。
+
+访问控制不是滴水不漏的，C++可以通过指针来间接访问private成员，Java和C#也可以利用反射机制暗渡陈仓。
+但是：反射机制多用于单元测试、代码分析、框架设计等特殊用途，
+在常规应用中，除了实例化编译器未知类外，一般不宜使用。
+实际上，访问控制只是为了防止程序员的无意误用，不打算、也无法防止程序员的故意破坏。
+</code></pre></div><h2 id="安全问题"><a href="#安全问题" class="header-anchor">#</a> 安全问题</h2> <div class="language-md extra-class"><pre class="language-md"><code>如果一个方法返回一个可变（mutable）域对象（field object）的引用，无异于前门紧闭后门洞开。
+解决这个问题需要用到防御性编程，更具体的说是防御性复制，即返回对象的一个复制品，以免授人以柄。
+
+如果一个域对象中又包含其他可变的对象，
+简单的按位复制（bitwise copy，浅拷贝）仍然不够，需要其他的复制策略，如深拷贝或迟拷贝。
+注：迟拷贝是浅拷贝和深拷贝的折衷方案：起初浅拷贝，必要时（如被修改）转为深拷贝。
+常见形式是写时拷贝（copy-on-write，CoW）。
+
+不是所有返回的域对象都会带来安全问题，请注意可变和引用两个条件。
+
+基本类型都不是引用，作为传入参数或返回值时会自动被复制，因而是安全的；
+
+不可变非基本类型，像Java的string、基本类型的包装类（wrapper class）如Integer、Double等，同样也是安全的。
+
+此外C++和C#中申明了const的指针或引用返回值也能防止客户修改。
+</code></pre></div><h2 id="信息隐藏"><a href="#信息隐藏" class="header-anchor">#</a> 信息隐藏</h2> <div class="language-md extra-class"><pre class="language-md"><code>信息隐藏原则固然重要，但也不是千遍一律的，比如仅作为数据存储的类甚至可以开放所有的域成员；
+在非同类的对象之间共享或传递同一个引用有事也是必要的。
+
+信息隐藏不仅是数据结构，还包括实现方式和策略（P214）。
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/colon-classroom/assets/js/app.ec0b5e36.js" defer></script><script src="/colon-classroom/assets/js/2.8729a11c.js" defer></script><script src="/colon-classroom/assets/js/30.4f474b68.js" defer></script>
+  </body>
+</html>
