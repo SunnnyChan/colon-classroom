@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PHP trait | 冒号课堂</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/colon-classroom/assets/css/0.styles.66c7515b.css" as="style"><link rel="preload" href="/colon-classroom/assets/js/app.ec0b5e36.js" as="script"><link rel="preload" href="/colon-classroom/assets/js/2.8729a11c.js" as="script"><link rel="preload" href="/colon-classroom/assets/js/40.31f6b10b.js" as="script"><link rel="prefetch" href="/colon-classroom/assets/js/10.368bea65.js"><link rel="prefetch" href="/colon-classroom/assets/js/11.d2f0a483.js"><link rel="prefetch" href="/colon-classroom/assets/js/12.33727165.js"><link rel="prefetch" href="/colon-classroom/assets/js/13.c3807870.js"><link rel="prefetch" href="/colon-classroom/assets/js/14.4422a58e.js"><link rel="prefetch" href="/colon-classroom/assets/js/15.9a6e94e2.js"><link rel="prefetch" href="/colon-classroom/assets/js/16.355473a7.js"><link rel="prefetch" href="/colon-classroom/assets/js/17.ad77ae48.js"><link rel="prefetch" href="/colon-classroom/assets/js/18.e04ab935.js"><link rel="prefetch" href="/colon-classroom/assets/js/19.2628013f.js"><link rel="prefetch" href="/colon-classroom/assets/js/20.53a11e89.js"><link rel="prefetch" href="/colon-classroom/assets/js/21.f9792c66.js"><link rel="prefetch" href="/colon-classroom/assets/js/22.eccee837.js"><link rel="prefetch" href="/colon-classroom/assets/js/23.8c12f11d.js"><link rel="prefetch" href="/colon-classroom/assets/js/24.730c0eba.js"><link rel="prefetch" href="/colon-classroom/assets/js/25.1ea088d3.js"><link rel="prefetch" href="/colon-classroom/assets/js/26.a7f69969.js"><link rel="prefetch" href="/colon-classroom/assets/js/27.32626129.js"><link rel="prefetch" href="/colon-classroom/assets/js/28.93b30a44.js"><link rel="prefetch" href="/colon-classroom/assets/js/29.b0358f74.js"><link rel="prefetch" href="/colon-classroom/assets/js/3.29adc69c.js"><link rel="prefetch" href="/colon-classroom/assets/js/30.4f474b68.js"><link rel="prefetch" href="/colon-classroom/assets/js/31.9b1e9d94.js"><link rel="prefetch" href="/colon-classroom/assets/js/32.bad2713e.js"><link rel="prefetch" href="/colon-classroom/assets/js/33.ffc77d35.js"><link rel="prefetch" href="/colon-classroom/assets/js/34.b681b0f9.js"><link rel="prefetch" href="/colon-classroom/assets/js/35.995c72ed.js"><link rel="prefetch" href="/colon-classroom/assets/js/36.a7343326.js"><link rel="prefetch" href="/colon-classroom/assets/js/37.1499c16f.js"><link rel="prefetch" href="/colon-classroom/assets/js/38.c6f3c4b1.js"><link rel="prefetch" href="/colon-classroom/assets/js/39.13970ecf.js"><link rel="prefetch" href="/colon-classroom/assets/js/4.5f60d4ea.js"><link rel="prefetch" href="/colon-classroom/assets/js/41.8bd8d456.js"><link rel="prefetch" href="/colon-classroom/assets/js/42.ae600a4f.js"><link rel="prefetch" href="/colon-classroom/assets/js/43.9590bd29.js"><link rel="prefetch" href="/colon-classroom/assets/js/5.d7aeab17.js"><link rel="prefetch" href="/colon-classroom/assets/js/6.f3a0310a.js"><link rel="prefetch" href="/colon-classroom/assets/js/7.8f9f5f9a.js"><link rel="prefetch" href="/colon-classroom/assets/js/8.dbb58cf6.js"><link rel="prefetch" href="/colon-classroom/assets/js/9.0193b6be.js">
+    <link rel="stylesheet" href="/colon-classroom/assets/css/0.styles.66c7515b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/colon-classroom/" class="home-link router-link-active"><!----> <span class="site-name">冒号课堂</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="http://www.github.com/sunnnychan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="http://www.github.com/sunnnychan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/colon-classroom/chapter/" class="sidebar-link">章节</a></li><li><a href="/colon-classroom/notes/" class="sidebar-link">参考</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="php-trait"><a href="#php-trait" class="header-anchor">#</a> PHP trait</h1> <p>https://wiki.php.net/rfc/traits<br>
+https://secure.php.net/manual/zh/language.oop5.traits.php</p> <p>自 PHP 5.4.0 起，PHP 实现了一种代码复用的方法，称为 trait。</p> <p>Trait 是为类似 PHP 的单继承语言而准备的一种代码复用机制。<br>
+Trait 为了减少单继承语言的限制，使开发人员能够自由地在不同层次结构内独立的类中复用 method。<br>
+Trait 和 Class 组合的语义定义了一种减少复杂性的方式，避免传统多继承和 Mixin 类相关典型问题。</p> <p>Trait 和 Class 相似，但仅仅旨在用细粒度和一致的方式来组合功能。 无法通过 trait 自身来实例化。<br>
+它为传统继承增加了水平特性的组合；也就是说，应用的几个 Class 之间不需要继承。</p> <p>优先级<br>
+从基类继承的成员会被 trait 插入的成员所覆盖。<br>
+优先顺序是来自当前类的成员覆盖了 trait 的方法，而 trait 则覆盖了被继承的方法。</p> <p>多个 trait<br>
+通过逗号分隔，在 use 声明列出多个 trait，可以都插入到一个类中。</p> <p>冲突的解决<br>
+如果两个 trait 都插入了一个同名的方法，如果没有明确解决冲突将会产生一个致命错误。<br>
+为了解决多个 trait 在同一个类中的命名冲突，需要使用 insteadof 操作符来明确指定使用冲突方法中的哪一个。<br>
+以上方式仅允许排除掉其它方法，as 操作符可以将其中一个冲突的方法以另一个名称来引入。</p> <p>修改方法的访问控制<br>
+使用 as 语法还可以用来调整方法的访问控制。</p> <p>从 trait 来组成 trait<br>
+正如 class 能够使用 trait 一样，其它 trait 也能够使用 trait。<br>
+在 trait 定义时通过使用一个或多个 trait，能够组合其它 trait 中的部分或全部成员。</p> <p>Trait 的抽象成员<br>
+为了对使用的类施加强制要求，trait 支持抽象方法的使用。</p> <p>Trait 的静态成员<br>
+Traits 可以被静态成员静态方法定义。</p> <p>属性<br>
+Trait 同样可以定义属性。<br>
+如果 trait 定义了一个属性，那类将不能定义同样名称的属性，否则会产生一个错误。<br>
+如果该属性在类中的定义与在 trait 中的定义兼容（同样的可见性和初始值）则错误的级别是 E_STRICT，否则是一个致命错误。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/colon-classroom/assets/js/app.ec0b5e36.js" defer></script><script src="/colon-classroom/assets/js/2.8729a11c.js" defer></script><script src="/colon-classroom/assets/js/40.31f6b10b.js" defer></script>
+  </body>
+</html>
